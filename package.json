@@ -1,0 +1,30 @@
+{
+  "name": "products-grid",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Build a grid of product items and ads",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"yarn startserver\" \"yarn startreact\"",
+    "startserver": "json-server server/index.js --routes server/routes.json --middlewares server/handle-delay.js server/handle-ads.js",
+    "startreact": "PORT=4000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "author": "John Anisere",
+  "license": "MIT",
+  "dependencies": {
+    "cool-ascii-faces": "^1.3.4",
+    "json-server": "^0.9.6",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1",
+    "react-bootstrap": "^0.32.1",
+    "react-icons": "^2.2.7",
+    "react-particles-js": "^2.1.1",
+    "react-spinkit": "^3.0.0",
+    "concurrently": "^3.5.1"
+  },
+  "proxy": "http://localhost:3000"
+}
